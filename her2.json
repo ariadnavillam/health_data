@@ -1,0 +1,130 @@
+  //HER2 report
+  {
+    "resourceType" : "DiagnosticReport",
+    // from Resource: id, meta, implicitRules, and language
+    // from DomainResource: text, contained, extension, and modifierExtension
+    "identifier" : "tumor-marker-her2-report", // Business identifier for report
+    "status" : "final", // R!  registered | partial | preliminary | final +
+    "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "434363004",
+            "display": "Human epidermal growth factor receptor 2 gene detection by fluorescence in situ hybridization"
+          }
+        ]
+      },
+    "subject": {
+        "reference": "Patient/cancer-roberta",
+        "display": "Roberta Rodriguez"
+    }, // The subject of the report - usually, but not always, the patient
+    "encounter" : { Reference(Encounter) }, // Health care event when test ordered
+    // effective[x]: Clinically relevant time/time-period for report. One of these 2:
+    "effectiveDateTime" : "<dateTime>",
+    "issued" : "<instant>", // DateTime this version was made
+    "performer" : [ 
+        {
+        "reference": "Practitioner/practitioner-2"
+      } // Responsible Diagnostic Service
+        ],
+    "result" : [
+        { 
+        "reference": "Observation/tumor-marker-test-her2"
+        }
+        ], // Observations
+    
+  }
+// HER2 observation
+  {
+    "resourceType" : "Observation",
+    "id" : "tumor-marker-test-her2",
+    "meta" : {
+      "profile" : [
+        "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+      ]
+    },
+    "partOf" : [{ Reference(MedicationAdministration|MedicationDispense|
+        MedicationStatement|Procedure|Immunization|ImagingStudy) }],
+    "status" : "final",
+    "category" : [
+      {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code" : "laboratory"
+          }
+        ]
+      }
+    ],
+    "code" : {
+      "coding" : [
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "431396003",
+          "display" : "Human epidermal growth factor 2 negative carcinoma of breast"
+        }
+      ]
+    },
+    "subject" : {
+      "reference" : "Patient/breast-cancer-roberta"
+    },
+    "performer" : [
+      {
+        "reference" : "Practitioner/practitioner-2"
+      }
+    ],
+    "valueCodeableConcept" : {
+      "coding" : [
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "260385009",
+          "display" : "Negative"
+        }
+      ]
+    }
+  }
+
+  // HER2 procedure
+  {
+    "resourceType": "Procedure",
+    "id": "her2-test",
+    "status": "completed",
+    "code": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "434363004",
+          "display": "Human epidermal growth factor receptor 2 gene detection by fluorescence in situ hybridization"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/cancer-roberta",
+      "display": "Roberta Rodriguez"
+    },
+    "encounter": {
+      "reference": "Encounter/f202",
+      "display": "Roel's encounter on January 28th, 2013///"
+    },
+    "performer" : [
+        {
+          "reference" : "Practitioner/practitioner-2"
+        }
+      ],
+    "reasonCode": [
+      {
+        "text": "DiagnosticReport/tumor-report"
+      }
+    ],
+    "bodySite": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": ": 343011009",
+              "display": "Duct"
+            }
+          ]
+        }
+      ]
+  }
