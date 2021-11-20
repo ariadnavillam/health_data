@@ -1,0 +1,30 @@
+{
+    "resourceType" : "DiagnosticReport",
+    // from Resource: id, meta, implicitRules, and language
+    // from DomainResource: text, contained, extension, and modifierExtension
+    "identifier" : "cancer001", // Business identifier for report
+    "status" : "registered", // R!  registered | partial | preliminary | final +
+    "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "82711006",
+            "display": "Infiltrating duct carcinoma (morphologic abnormality)"
+          }
+        ]
+      },
+    "subject": {
+        "reference": "Patient/4241247",
+        "display": "Roberta Rodriguez"
+    }, // The subject of the report - usually, but not always, the patient
+    "encounter" : { Reference(Encounter) }, // Health care event when test ordered
+    // effective[x]: Clinically relevant time/time-period for report. One of these 2:
+    "effectiveDateTime" : "<dateTime>",
+    "issued" : "<instant>", // DateTime this version was made
+    "performer" : [ 
+        {
+        "reference": "Practitioner/2"
+      } // Responsible Diagnostic Service
+        ]
+    
+  }
