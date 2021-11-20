@@ -19,13 +19,31 @@
     "birthDate" : "2055-12-01", // The date of birth for the individual
     // deceased[x]: Indicates if the individual is deceased or not. One of these 2:
     "deceasedBoolean" : false,
-    "generalPractitioner" : [{ Reference(Organization|Practitioner|
-     PractitionerRole) }], // Patient's nominated primary care provider
+    "generalPractitioner" : [
+        {
+          "reference": "2",
+          "display": "Practitioner 2"
+        }
+      ], // Patient's nominated primary care provider
     "managingOrganization" : {
-      "reference":"organization1"
-    }, // Organization that is the custodian of the patient record
+        "reference" : "1",
+        "display" : "Organization 1"
+      }, // Organization that is the custodian of the patient record
   }
   
+  {
+    "resourceType" : "Organization",
+    // from Resource: id, meta, implicitRules, and language
+    // from DomainResource: text, contained, extension, and modifierExtension
+    "identifier" : [
+      {
+      "use": "usual",
+      "value": "1"
+      }
+    ], // C? Identifies this organization  across multiple systems
+    "active" : true,  // Whether the organization's record is still in active use
+    "name" : "Organization 1", // C? Name used for the organization
+  }
   
   {
     "resourceType" : "Practitioner",
