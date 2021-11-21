@@ -1,0 +1,179 @@
+{
+    "resourceType" : "Medication",
+    // from Resource: id, meta, implicitRules, and language
+    // from DomainResource: text, contained, extension, and modifierExtension
+    "identifier" : [
+      {
+      "use": "usual",
+      "value": "med0505"
+      }
+    ], // Business identifier for this medication
+    "code": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "775794006",
+          "display": "epirubicin (medicinal product)"
+        }
+      ]
+    }, // Codes that identify this medication
+    "status" : "active",
+    "form": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "385219001",
+          "display": "Conventional release solution for injection (dose form)"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "417916005",
+              "display": "epirubicin (substance)"
+            }
+          ]
+        },
+        "strength": {
+          "numerator": {
+            "value": 60,
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "denominator": {
+            "value": 1,
+            "system": "http://unitsofmeasure.org",
+            "code": "ml"
+          }
+        }
+      }
+    ],
+  }
+  
+  {
+    "resourceType" : "MedicationAdministration",
+    // from Resource: id, meta, implicitRules, and language
+    // from DomainResource: text, contained, extension, and modifierExtension
+    "identifier" : [{ Identifier }], // External identifier
+    "partOf" : [{ Reference(MedicationAdministration|Procedure) }], // Part of referenced event
+    "status" : "completed", // R!  in-progress | not-done | on-hold | completed | entered-in-error | stopped | unknown
+    "category" : { CodeableConcept }, // Type of medication usage
+    // medication[x]: What was administered. One of these 2:
+    "medicationReference": {
+      "reference": "med0505",
+      "display": "epirubicin"
+    },
+    "subject": {
+      "reference": "4241247",
+      "display": "Roberta Rodriguez"
+    },
+    "context": {
+      "reference": "visit 1",
+      "display": ""
+    }, // Encounter or Episode of Care administered as part of
+    // effective[x]: Start and end time of administration. One of these 2:
+    "effectiveDateTime" : "1993-6-1",
+    "performer": [
+      {
+        "actor": {
+          "reference": "Practitioner/2",
+          "display": "Practitioner 2"
+        }
+      }
+    ],
+    "reasonReference" : [{ Reference(Condition|Observation|DiagnosticReport) }], // Condition or observation that supports why the medication was administered
+  }
+  
+  {
+    "resourceType" : "Medication",
+    // from Resource: id, meta, implicitRules, and language
+    // from DomainResource: text, contained, extension, and modifierExtension
+    "identifier" : [
+      {
+      "use": "usual",
+      "value": "med0303"
+      }
+    ], // Business identifier for this medication
+    "code": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "777824009",
+          "display": "trastuzumab (medicinal product)"
+        }
+      ]
+    }, // Codes that identify this medication
+    "status" : "active", // active | inactive | entered-in-error
+    "form": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "385055001",
+          "display": "Tablet (basic dose form)"
+        }
+      ]
+    },
+    "ingredient": [
+      {
+        "itemCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387003001",
+              "display": "trastuzumab (substance)"
+            }
+          ]
+        },
+        "strength": {
+          "numerator": {
+            "value": 4,
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          },
+          "denominator": {
+            "value": 1,
+            "system": "http://unitsofmeasure.org",
+            "code": "kg"
+          }
+        }
+      }
+    ],
+  }
+  
+  {
+    "resourceType" : "MedicationAdministration",
+    // from Resource: id, meta, implicitRules, and language
+    // from DomainResource: text, contained, extension, and modifierExtension
+    "identifier" : [{ Identifier }], // External identifier
+    "partOf" : [{ Reference(MedicationAdministration|Procedure) }], // Part of referenced event
+    "status" : "completed", // R!  in-progress | not-done | on-hold | completed | entered-in-error | stopped | unknown
+    "category" : { CodeableConcept }, // Type of medication usage
+    // medication[x]: What was administered. One of these 2:
+    "medicationReference": {
+      "reference": "med0303",
+      "display": "trastuzumab"
+    },
+    "subject": {
+      "reference": "4241247",
+      "display": "Roberta Rodriguez"
+    },
+    "context": {
+      "reference": "visit 1",
+      "display": ""
+    }, // Encounter or Episode of Care administered as part of
+    // effective[x]: Start and end time of administration. One of these 2:
+    "effectiveDateTime" : "1993-6-1",
+    "performer": [
+      {
+        "actor": {
+          "reference": "Practitioner/2",
+          "display": "Practitioner 2"
+        }
+      }
+    ],
+    "reasonReference" : [{ Reference(Condition|Observation|DiagnosticReport) }], // Condition or observation that supports why the medication was administered
+  }

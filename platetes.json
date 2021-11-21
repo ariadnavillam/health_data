@@ -1,0 +1,45 @@
+{
+    "resourceType" : "DiagnosticReport",
+    // from Resource: id, meta, implicitRules, and language
+    // from DomainResource: text, contained, extension, and modifierExtension
+    "identifier" : [{
+      // from Element: extension
+      "use" : "usual", // usual | official | temp | secondary | old (If known)
+      "value" : "bloodreport", // The value that is unique
+    }], // Business identifier for report
+    "status" : "final", // R!  registered | partial | preliminary | final +
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "HM"
+          }
+        ]
+      }
+    ], // Service category
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "777-3",
+          "display": "Platelets [#/volume] in Blood by Automated count"
+        }
+      ],
+      "text": "Platelets volume in blood (10*3/uL)"
+    }, // R!  Name/Code for this diagnostic report
+    "subject": {
+      "reference": "4241247"
+    }, // The subject of the report - usually, but not always, the patient
+    "encounter": {
+      "reference": "Encounter/visit1"
+    }, // Health care event when test ordered
+    // effective[x]: Clinically relevant time/time-period for report. One of these 2:
+    "effectiveDateTime" : "1993-6-1",
+    "effectiveDateTime" : "1993-6-1", // DateTime this version was made
+    "performer" : [{ Reference(Practitioner|PractitionerRole|Organization|
+     CareTeam) }], // Responsible Diagnostic Service
+    "resultsInterpreter" : [{ "reference": "Practitioner/1" }], // Primary result interpreter
+    "conclusion" : "66*10^3 platelets/uL of blood", // Clinical conclusion (interpretation) of test results
+    "conclusionCode" : [{ CodeableConcept }], // Codes for the clinical conclusion of test results
+  }

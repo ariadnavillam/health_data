@@ -1,0 +1,12 @@
+// Organization
+{
+  "resourceType" : "Organization",
+
+  "identifier" : [
+    {
+    "value": "1"
+    }
+  ], 
+  "active" : true, 
+  "name" : "Organization 1", 
+}
