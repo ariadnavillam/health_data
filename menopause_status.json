@@ -1,0 +1,41 @@
+// menopausal status
+{
+    "resourceType" : "Observation",
+
+    "identifier" : [{
+        "value": "menopause_status"
+        }], 
+
+    "status" : "final", // R!  registered | preliminary | final | amended 
+    "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+          "code": "161712005",
+          "display": "menopausal state"
+          }
+        ]
+      }, 
+      "subject": {
+        "reference": "Patient/4241247",
+        "display": "Roberta Rodriguez"
+      }, // Who and/or what the observation is about
+    "encounter" : {
+        "reference": "Encounter/visit1"
+      }, 
+    "effectiveDateTime" : "1993-06-01",
+    "performer" : [{
+        "reference": "Practitioner/2",
+        "display": "Practicioner 2"
+      }], 
+    "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "161541000119104",
+            "display": "Perimenopausal state (finding)"
+          }
+        ]
+      },
+    "valueString" : "Perimenopausal state",
+  }
