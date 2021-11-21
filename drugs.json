@@ -1,7 +1,6 @@
 {
     "resourceType" : "Medication",
-    // from Resource: id, meta, implicitRules, and language
-    // from DomainResource: text, contained, extension, and modifierExtension
+
     "identifier" : [
       {
       "use": "usual",
@@ -56,13 +55,11 @@
   
   {
     "resourceType" : "MedicationAdministration",
-    // from Resource: id, meta, implicitRules, and language
-    // from DomainResource: text, contained, extension, and modifierExtension
+
     "identifier" : [{ Identifier }], // External identifier
     "partOf" : [{ Reference(MedicationAdministration|Procedure) }], // Part of referenced event
-    "status" : "completed", // R!  in-progress | not-done | on-hold | completed | entered-in-error | stopped | unknown
+    "status" : "completed",
     "category" : { CodeableConcept }, // Type of medication usage
-    // medication[x]: What was administered. One of these 2:
     "medicationReference": {
       "reference": "med0505",
       "display": "epirubicin"
@@ -74,8 +71,7 @@
     "context": {
       "reference": "visit 1",
       "display": ""
-    }, // Encounter or Episode of Care administered as part of
-    // effective[x]: Start and end time of administration. One of these 2:
+    }, 
     "effectiveDateTime" : "1993-6-1",
     "performer": [
       {
@@ -90,8 +86,6 @@
   
   {
     "resourceType" : "Medication",
-    // from Resource: id, meta, implicitRules, and language
-    // from DomainResource: text, contained, extension, and modifierExtension
     "identifier" : [
       {
       "use": "usual",
@@ -107,7 +101,7 @@
         }
       ]
     }, // Codes that identify this medication
-    "status" : "active", // active | inactive | entered-in-error
+    "status" : "active", 
     "form": {
       "coding": [
         {
@@ -146,13 +140,11 @@
   
   {
     "resourceType" : "MedicationAdministration",
-    // from Resource: id, meta, implicitRules, and language
-    // from DomainResource: text, contained, extension, and modifierExtension
+
     "identifier" : [{ Identifier }], // External identifier
     "partOf" : [{ Reference(MedicationAdministration|Procedure) }], // Part of referenced event
-    "status" : "completed", // R!  in-progress | not-done | on-hold | completed | entered-in-error | stopped | unknown
+    "status" : "completed", 
     "category" : { CodeableConcept }, // Type of medication usage
-    // medication[x]: What was administered. One of these 2:
     "medicationReference": {
       "reference": "med0303",
       "display": "trastuzumab"
@@ -164,8 +156,7 @@
     "context": {
       "reference": "visit 1",
       "display": ""
-    }, // Encounter or Episode of Care administered as part of
-    // effective[x]: Start and end time of administration. One of these 2:
+    }, 
     "effectiveDateTime" : "1993-6-1",
     "performer": [
       {

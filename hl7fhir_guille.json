@@ -1,7 +1,6 @@
 {
   "resourceType" : "Patient",
-  // from Resource: id, meta, implicitRules, and language
-  // from DomainResource: text, contained, extension, and modifierExtension
+
   "identifier" : [
     {
     "use": "usual",
@@ -15,19 +14,18 @@
     "family": "Rodriguez",
     "given": ["Roberta"]
   }], // A name associated with the patient
-  "gender" : "female", // male | female | other | unknown
-  "birthDate" : "1955-12-01", // The date of birth for the individual
-  // deceased[x]: Indicates if the individual is deceased or not. One of these 2:
+  "gender" : "female", 
+  "birthDate" : "1955-12-01",
   "deceasedBoolean" : false,
   "generalPractitioner" : [
     {
       "reference": "2",
-      "display": "Practitioner 2"
+      "display": "Practitioner/2"
     }
   ], // Patient's nominated primary care provider
   "managingOrganization" : {
     "reference":"1",
-    "display": "Organization 1"
+    "display": "Organization/1"
   }, // Organization that is the custodian of the patient record
 }
 
