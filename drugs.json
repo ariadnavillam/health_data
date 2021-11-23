@@ -1,161 +1,162 @@
 {
-    "resourceType" : "Medication",
+  "resourceType" : "Medication",
 
-    "identifier" : [
+  "identifier" : [
+    {
+    "use": "usual",
+    "value": "med0505"
+    }
+  ], // Business identifier for this medication
+  "code": {
+    "coding": [
       {
-      "use": "usual",
-      "value": "med0505"
+        "system": "http://snomed.info/sct",
+        "code": "775794006",
+        "display": "epirubicin (medicinal product)"
       }
-    ], // Business identifier for this medication
-    "code": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "775794006",
-          "display": "epirubicin (medicinal product)"
-        }
-      ]
-    }, // Codes that identify this medication
-    "status" : "active",
-    "form": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "385219001",
-          "display": "Conventional release solution for injection (dose form)"
-        }
-      ]
-    },
-    "ingredient": [
+    ]
+  }, // Codes that identify this medication
+  "status" : "active",
+  "form": {
+    "coding": [
       {
-        "itemCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "417916005",
-              "display": "epirubicin (substance)"
-            }
-          ]
-        },
-        "strength": {
-          "numerator": {
-            "value": 60,
-            "system": "http://unitsofmeasure.org",
-            "code": "mg"
-          },
-          "denominator": {
-            "value": 1,
-            "system": "http://unitsofmeasure.org",
-            "code": "ml"
+        "system": "http://snomed.info/sct",
+        "code": "385219001",
+        "display": "Conventional release solution for injection (dose form)"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "417916005",
+            "display": "epirubicin (substance)"
           }
+        ]
+      },
+      "strength": {
+        "numerator": {
+          "value": 60,
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "system": "http://unitsofmeasure.org",
+          "code": "ml"
         }
       }
-    ],
-  }
+    }
+  ],
+}
+  
+{
+  "resourceType" : "MedicationAdministration",
+
+  "identifier" : [{
+    "value": "administration-epirubicin-roberta"
+    }],
+  "status" : "completed",
+  "medicationReference": {
+    "reference": "Medication/med0505",
+    "display": "epirubicin"
+  },
+  "subject": {
+    "reference": "Patient/cancer-patient-roberta",
+    "display": "Roberta Rodriguez"
+  },
+  "context": {
+    "reference": "Encounter/visit1",
+  }, 
+  "effectiveDateTime" : "1993-6-1",
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/2",
+        "display": "Practitioner 2"
+      }
+    }
+  ],
+  "reasonReference" : [{
+    "reference" : "Condition/cancer-condition-roberta", 
+    "display" : "Breast Cancer Roberta"
+  }], // Condition or observation that supports why the medication was administered
+}
+  
+{
+  "resourceType" : "Medication",
+  "identifier" : [
+    {
+    "use": "usual",
+    "value": "med0303"
+    }
+  ], // Business identifier for this medication
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "777824009",
+        "display": "trastuzumab (medicinal product)"
+      }
+    ]
+  }, // Codes that identify this medication
+  "status" : "active", 
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385055001",
+        "display": "Tablet (basic dose form)"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "387003001",
+            "display": "trastuzumab (substance)"
+          }
+        ]
+      },
+      "strength": {
+        "numerator": {
+          "value": 4,
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    }
+  ],
+}
   
   {
     "resourceType" : "MedicationAdministration",
 
-    "identifier" : [{ Identifier }], // External identifier
-    "partOf" : [{ Reference(MedicationAdministration|Procedure) }], // Part of referenced event
-    "status" : "completed",
-    "category" : { CodeableConcept }, // Type of medication usage
-    "medicationReference": {
-      "reference": "med0505",
-      "display": "epirubicin"
-    },
-    "subject": {
-      "reference": "4241247",
-      "display": "Roberta Rodriguez"
-    },
-    "context": {
-      "reference": "visit 1",
-      "display": ""
-    }, 
-    "effectiveDateTime" : "1993-6-1",
-    "performer": [
-      {
-        "actor": {
-          "reference": "Practitioner/2",
-          "display": "Practitioner 2"
-        }
-      }
-    ],
-    "reasonReference" : [{ Reference(Condition|Observation|DiagnosticReport) }], // Condition or observation that supports why the medication was administered
-  }
-  
-  {
-    "resourceType" : "Medication",
-    "identifier" : [
-      {
-      "use": "usual",
-      "value": "med0303"
-      }
-    ], // Business identifier for this medication
-    "code": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "777824009",
-          "display": "trastuzumab (medicinal product)"
-        }
-      ]
-    }, // Codes that identify this medication
-    "status" : "active", 
-    "form": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "385055001",
-          "display": "Tablet (basic dose form)"
-        }
-      ]
-    },
-    "ingredient": [
-      {
-        "itemCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "387003001",
-              "display": "trastuzumab (substance)"
-            }
-          ]
-        },
-        "strength": {
-          "numerator": {
-            "value": 4,
-            "system": "http://unitsofmeasure.org",
-            "code": "mg"
-          },
-          "denominator": {
-            "value": 1,
-            "system": "http://unitsofmeasure.org",
-            "code": "kg"
-          }
-        }
-      }
-    ],
-  }
-  
-  {
-    "resourceType" : "MedicationAdministration",
-
-    "identifier" : [{ Identifier }], // External identifier
-    "partOf" : [{ Reference(MedicationAdministration|Procedure) }], // Part of referenced event
+    "identifier" : [{
+      "value": "administration-trastuzumab-roberta"
+      }], // External identifier
     "status" : "completed", 
-    "category" : { CodeableConcept }, // Type of medication usage
     "medicationReference": {
-      "reference": "med0303",
+      "reference": "Medication/med0303",
       "display": "trastuzumab"
     },
     "subject": {
-      "reference": "4241247",
+      "reference": "Patient/cancer-patient-roberta",
       "display": "Roberta Rodriguez"
     },
     "context": {
-      "reference": "visit 1",
-      "display": ""
+      "reference": "Encounter/visit1",
     }, 
     "effectiveDateTime" : "1993-6-1",
     "performer": [
@@ -166,5 +167,8 @@
         }
       }
     ],
-    "reasonReference" : [{ Reference(Condition|Observation|DiagnosticReport) }], // Condition or observation that supports why the medication was administered
+    "reasonReference" : [{
+      "reference" : "Condition/cancer-condition-roberta", 
+      "display" : "Breast Cancer Roberta"
+    }], // Condition or observation that supports why the medication was administered
   }
