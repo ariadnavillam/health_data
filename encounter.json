@@ -2,12 +2,8 @@
     "resourceType" : "Encounter",
     // from Resource: id, meta, implicitRules, and language
     // from DomainResource: text, contained, extension, and modifierExtension
-    "identifier" : [
-      {
-      "value": "visit1"
-      }
-    ], // Identifier(s) by which this encounter is known
-    "status" : "<code>", // R!  planned | arrived | triaged | in-progress | onleave | finished | cancelled +
+    "id" : "visit1", // Identifier(s) by which this encounter is known
+    "status" : "finished", // R!  planned | arrived | triaged | in-progress | onleave | finished | cancelled +
     "class": {
       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
       "code": "AMB",
@@ -16,7 +12,7 @@
     "type" : [{ CodeableConcept }], // Specific type of encounter
     "serviceType" : { CodeableConcept }, // Specific type of service
     "subject" : {
-      "reference": "4241247",
+      "reference": "Patient/cancer-patient-roberta",
       "display": "Roberta Rodriguez"
     }, // The patient or group present at the encounter
     "episodeOfCare" : [{ Reference(EpisodeOfCare) }], // Episode(s) of care that this encounter should be recorded against
@@ -33,7 +29,7 @@
           }
         ], // Role of participant in encounter
       "individual": {
-          "reference": "Practitioner/1",
+          "reference": "Practitioner/practitioner-2",
           "display": ""
         } // Persons involved in the encounter other than the patient
     }],

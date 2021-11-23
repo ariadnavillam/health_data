@@ -1,6 +1,7 @@
 // Practitioner
 {
     "resourceType" : "Practitioner",
+    "id" : "practitioner-2",
     "identifier" : [
       {
       "value": "2"

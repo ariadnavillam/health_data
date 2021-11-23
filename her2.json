@@ -3,7 +3,7 @@
     "resourceType" : "DiagnosticReport",
     // from Resource: id, meta, implicitRules, and language
     // from DomainResource: text, contained, extension, and modifierExtension
-    "identifier" : "tumor-marker-her2-report", // Business identifier for report
+    "id" : "tumor-marker-her2-report", // Business identifier for report
     "status" : "final", // R!  registered | partial | preliminary | final +
     "code": {
         "coding": [
