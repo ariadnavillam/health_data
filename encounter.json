@@ -57,6 +57,11 @@
         "reference" : "Procedure/cancer-related-surgical-procedure-roberta", 
         }, // R!  The diagnosis or procedure relevant to the encounter
       },
+      { // The list of diagnosis relevant to this encounter
+        "condition" : {
+          "reference" : "Procedure/blood-extraction-roberta", 
+          }, // R!  The diagnosis or procedure relevant to the encounter
+        },
     ],
     "serviceProvider" : {
       "reference": "Organzation/1",
