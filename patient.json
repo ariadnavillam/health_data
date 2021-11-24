@@ -7,25 +7,25 @@
       "use": "usual",
       "value": "4241247"
       }
-    ], // An identifier for this patient
-    "active" : true, // Whether this patient's record is in active use
+    ], 
+    "active" : true, 
     "name" : [{
       "use":"official",
       "text":"Roberta Rodriguez",
       "family": "Rodriguez",
       "given": ["Roberta"]
-    }], // A name associated with the patient
+    }],
     "gender" : "female", 
     "birthDate" : "1955-12-01",
     "deceasedBoolean" : false,
     "generalPractitioner" : [
       {
-        "reference": "2",
-        "display": "Practitioner/2"
+        "reference": "Practitioner/practitioner-2",
+        "display": "Practitioner 2"
       }
-    ], // Patient's nominated primary care provider
+    ],
     "managingOrganization" : {
-      "reference":"1" ,
-      "display": "Organization/1"
-    }, // Organization that is the custodian of the patient record
+      "reference" : "Organization/organization-1",
+      "display": "Organization 1"
+    },
 }

@@ -1,7 +1,7 @@
-// Organization
+
 {
   "resourceType" : "Organization",
-
+  "id" : "organization-1",
   "identifier" : [
     {
     "value": "1"

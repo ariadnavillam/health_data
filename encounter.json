@@ -1,20 +1,16 @@
 {
     "resourceType" : "Encounter",
-    "identifier" : [
-      {
-      "value": "visit1"
-      }
-    ], 
+    "id" : "visit1" 
     "status" : "finished", 
     "class": {
       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
       "code": "AMB",
       "display": "ambulatory encounter"
-    }, // R!  Classification of patient encounter
+    },
     "subject" : {
       "reference": "Patient/cancer-patient-roberta",
       "display": "Roberta Rodriguez"
-    }, // The patient or group present at the encounter
+    },
     "participant" : [{ 
       "type": [
           {
@@ -27,8 +23,8 @@
           }
         ], 
       "individual": {
-          "reference": "Practitioner/1",
-        } // Persons involved in the encounter other than the patient
+          "reference": "Practitioner/practitioner-2",
+        } 
     }],
     "period" : {
       "start" : "1993-6-1", 

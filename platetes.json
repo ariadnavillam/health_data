@@ -49,11 +49,7 @@
     "resourceType" : "DiagnosticReport",
     // from Resource: id, meta, implicitRules, and language
     // from DomainResource: text, contained, extension, and modifierExtension
-    "identifier" : [{
-      // from Element: extension
-      "use" : "usual", // usual | official | temp | secondary | old (If known)
-      "value" : "bloodreport", // The value that is unique
-    }], // Business identifier for report
+    "id" : "blood-report-roberta", // Business identifier for report
     "status" : "final", // R!  registered | partial | preliminary | final +
     "category": [
       {
@@ -76,7 +72,7 @@
       "text": "Platelets volume in blood (10*3/uL)"
     }, // R!  Name/Code for this diagnostic report
     "subject": {
-      "reference": "4241247"
+      "reference": "Patient/cancer-patient-roberta"
     }, // The subject of the report - usually, but not always, the patient
     "encounter": {
       "reference": "Encounter/visit1"
@@ -85,9 +81,11 @@
     "effectiveDateTime" : "1993-6-1",
     "effectiveDateTime" : "1993-6-1", // DateTime this version was made
     "performer" : [{
-      "reference": "Organzation/1",
+      "reference": "Organzation/organization-1",
     }], // Responsible Diagnostic Service
-    "resultsInterpreter" : [{ "reference": "Practitioner/1" }], // Primary result interpreter
+    "resultsInterpreter" : [{ 
+      "reference": "Practitioner/practitioner-2" 
+      }], // Primary result interpreter
     "conclusion" : "66*10^3 platelets/uL of blood", // Clinical conclusion (interpretation) of test results
   }
 }
@@ -95,9 +93,7 @@
 {
   "resourceType" : "Observation",
 
-  "identifier" : [{
-    "value": "platelet-count-roberta"
-    }],  // Business Identifier for observation
+  "id" : "platelet-count-roberta",  // Business Identifier for observation
   "status" : "final", // R!  registered | preliminary | final | amended +
   "category": [
     {
@@ -135,38 +131,5 @@
     "unit": "x10^3/µL",
     "system": "http://unitsofmeasure.org",
     "code": "10*9/L"
-  },
-}
-
-  {
-    "resourceType" : "Observation",
-    "id" : "tnm-lymph-nodes-category-roberta",
-    "meta" : {
-      "profile" : [
-        "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-regional-nodes-category"
-      ]
-    },
-    "status" : "final",
-    "code" : {
-      "coding" : [
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : " 385379008",
-          "display" : "Tumor-node-metastasis (TNM)"
-        }
-      ]
-    },
-    "subject" : {
-      "reference" : "Patient/cancer-patient-roberta"
-    },
-    "effectiveDateTime" : "2018-03-16",
-    "valueCodeableConcept" : {
-      "coding" : [
-        {
-          "system" : "http://snomed.info/sct",
-          "code" : "62455006",
-          "display": "N0 category"
-        }
-      ]
-    }
   }
+}

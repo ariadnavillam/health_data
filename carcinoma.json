@@ -18,10 +18,6 @@
         "reference": "Patient/4241247",
         "display": "Roberta Rodriguez"
     }, // The subject of the report - usually, but not always, the patient
-    "encounter" : { Reference(Encounter) }, // Health care event when test ordered
-    // effective[x]: Clinically relevant time/time-period for report. One of these 2:
-    "effectiveDateTime" : "<dateTime>",
-    "issued" : "<instant>", // DateTime this version was made
     "performer" : [ 
         {
         "reference": "Practitioner/practitioner-2"

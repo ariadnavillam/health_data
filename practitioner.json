@@ -6,5 +6,19 @@
       {
       "value": "2"
       }
-    ], // An identifier for the person as this agent
+    ],
+    "active": true,
+    "qualification": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "310512001",
+              "display": "Medical oncologist (occupation)"
+            }
+          ]
+        }
+      }
+    ]
   }
