@@ -297,7 +297,10 @@
           }
         ]
       }
-    ]
+    ],
+  "report" : {
+    "reference" : "diagnosticreport-lab-roberta"
+    }
   }
 
 {
