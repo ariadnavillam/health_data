@@ -30,28 +30,28 @@
 }
 
 {
-    "resourceType" : "Practitioner",
-    "id" : "practitioner-2",
-    "identifier" : [
-      {
-      "value": "2"
+  "resourceType" : "Practitioner",
+  "id" : "practitioner-2",
+  "identifier" : [
+    {
+    "value": "2"
+    }
+  ],
+  "active": true,
+  "qualification": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "310512001",
+            "display": "Medical oncologist (occupation)"
+          }
+        ]
       }
-    ],
-    "active": true,
-    "qualification": [
-      {
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "310512001",
-              "display": "Medical oncologist (occupation)"
-            }
-          ]
-        }
-      }
-    ]
-  }
+    }
+  ]
+}
 
 {
     "resourceType" : "Organization",
@@ -891,13 +891,13 @@
 
 {
   "resourceType" : "Medication",
-  "id" : "drug-trastuzumab"
+  "id" : "drug-trastuzumab",
   "identifier" : [
     {
     "use": "usual",
     "value": "med0303"
     }
-  ], // Business identifier for this medication
+  ], 
   "code": {
     "coding": [
       {
@@ -906,7 +906,7 @@
         "display": "trastuzumab (medicinal product)"
       }
     ]
-  }, // Codes that identify this medication
+  }, 
   "status" : "active", 
   "form": {
     "coding": [
@@ -949,7 +949,7 @@
 
     "identifier" : [{
       "value": "administration-trastuzumab-roberta"
-      }], // External identifier
+      }], 
     "status" : "completed", 
     "medicationReference": {
       "reference": "Medication/drug-trastuzumab",
@@ -974,12 +974,12 @@
     "reasonReference" : [{
       "reference" : "Condition/cancer-condition-roberta", 
       "display" : "Breast Cancer Roberta"
-    }], // Condition or observation that supports why the medication was administered
+    }], 
   }
 
 {
     "resourceType" : "Medication",
-    "id" : "drug-trastuzumab"
+    "id" : "drug-trastuzumab",
     "identifier" : [
       {
       "use": "usual",
