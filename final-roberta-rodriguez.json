@@ -364,7 +364,7 @@
         "reference" : "Observation/tumor-marker-test-era-roberta"
       },
       {
-        "reference" : "Observation/us-core-observation-lab-tumor-grade-jenny-m"
+        "reference" : "Observation/us-core-observation-lab-tumor-grade-roberta"
       }
     ]
 }
